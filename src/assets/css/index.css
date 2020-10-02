@@ -1,9 +1,12 @@
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+@media (max-width: 767.98px) {
+  .offcanvas {
+    position: fixed;
+    top: 40px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+  }
+
+  .offcanvas.open {
+    transform: translateX(0);
+  }
 }
