@@ -10,14 +10,20 @@ export function getToken() {
   return sessionStorage.getItem('token') || null;
 }
 
+export function getUsername() {
+  return sessionStorage.getItem('username') || null;
+}
+
 export function removeUserSession() {
   sessionStorage.removeItem('token');
   sessionStorage.removeItem('user');
+  sessionStorage.removeItem('username');
 }
 
-export function setUserSession(token, user) {
+export function setUserSession(token, user, username) {
   sessionStorage.setItem('token', token);
   sessionStorage.setItem('user', user);
+  sessionStorage.setItem('username', username);
 }
 
 const APIDIR = 'https://find-your-course-api.herokuapp.com/';
