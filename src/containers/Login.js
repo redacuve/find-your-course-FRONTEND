@@ -14,39 +14,10 @@ function Login(props) {
   const error = useSelector(state => state.UserLogin.error);
   const loading = useSelector(state => state.UserLogin.loading);
 
-  // useEffect(() => {
-  //  if (token && user){
-  //    props.history.push('/dashboard');
-  //    setUserSession(token, user)
-  //    console.log('jala de nyevo')
-  //  }
-  // }, [token, user, props.history])
-
   const handleLogin = data => {
     dispatch(setLoginError(null));
     dispatch(setLoginLoading(true));
     dispatch(UserLogin(data.email, data.password, props.history));
-
-    // console.log(`login store token ${login_store.token}`)
-    // if (login_store.token !== null){
-    //  setUserSession(login_store.token, data.email)
-    //  dispatch(setLoginLoading(false));
-    //  dispatch(setLoginError(null));
-    //  props.history.push('/dashboard');
-    // } else {
-    //  dispatch(setLoginLoading(false));
-    // }
-    // const result = getToken(data.email, data.password);
-    // result.then(res => {
-    //   if (res.auth_token) {
-    //     setUserSession(res.auth_token, data.email);
-    //     setLoading(false);
-    //     props.history.push('/dashboard');
-    //   } else {
-    //     setLoading(false);
-    //     setError(res.message);
-    //   }
-    // });
   };
 
   return (
