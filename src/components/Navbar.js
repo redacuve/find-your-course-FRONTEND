@@ -1,7 +1,13 @@
 import React, { useRef } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import PrivateMenu from './PrivateMenu';
+import PublicMenu from './PublicMenu';
 
 function Navbar() {
+  const history = useHistory();
   const sidebarRef = useRef();
+  const token = useSelector(state => state.UserLogin.token);
 
   const toggleMenu = () => {
     sidebarRef.current.classList.toggle('open');
@@ -9,15 +15,11 @@ function Navbar() {
 
   return (
     <>
-      <div className="offcanvas w-auto bg-gray-600 p-3" ref={sidebarRef}>
-        <div>
-          <div>User Image</div>
-          <h4>User Name</h4>
-        </div>
-        <div>Dashboard</div>
-        <div>Logout</div>
-      </div>
-
+      {token ? (
+        <PrivateMenu sidebarRef={sidebarRef} history={history} />
+      ) : (
+        <PublicMenu sidebarRef={sidebarRef} />
+      )}
       <nav className="flex justify-between p-2 items-center">
         <div
           className="md:hidden"
@@ -29,7 +31,7 @@ function Navbar() {
         >
           <i className="fas fa-bars" />
         </div>
-        <h2>Title</h2>
+        <Link to="/">Title</Link>
         <div>
           <i className="fal fa-search" />
         </div>
