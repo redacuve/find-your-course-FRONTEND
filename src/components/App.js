@@ -7,17 +7,19 @@ import PrivateRoute from '../Utils/PrivateRoute';
 import Login from '../containers/Login';
 import Signup from '../containers/Signup';
 import Dashboard from '../containers/Dashboard';
+import Courses from '../containers/Courses';
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <div className="container mx-auto max-w-screen-xl">
+      <div className="container mx-auto max-w-screen-xl p-3">
         <Switch>
           <Route exact path="/" component={Home} />
           <PublicRoute path="/login" component={Login} />
           <PublicRoute path="/signup" component={Signup} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/courses" component={Courses} />
         </Switch>
       </div>
     </BrowserRouter>
