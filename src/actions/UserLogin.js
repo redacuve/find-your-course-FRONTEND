@@ -37,7 +37,7 @@ const UserLogin = (email, password, history) => dispatch => {
     .then(response => response.json())
     .then(result => {
       if (result.auth_token) {
-        setUserSession(result.auth_token, email);
+        setUserSession(result.auth_token, email, result.username);
         dispatch(setLogin(result.auth_token, email, result.username));
         history.push('/dashboard');
       } else {

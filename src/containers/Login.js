@@ -17,7 +17,7 @@ function Login(props) {
   const handleLogin = data => {
     dispatch(setLoginError(null));
     dispatch(setLoginLoading(true));
-    dispatch(UserLogin(data.email, data.password, props.history));
+    dispatch(UserLogin(data.email.toLowerCase(), data.password, props.history));
   };
 
   return (

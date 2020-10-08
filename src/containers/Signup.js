@@ -2,7 +2,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { setLoginError, setLoginLoading, UserSignup } from '../actions/UserLogin';
+import {
+  setLoginError,
+  setLoginLoading,
+  UserSignup,
+} from '../actions/UserLogin';
 
 function Signup(props) {
   const { register, handleSubmit, errors } = useForm();
@@ -13,7 +17,14 @@ function Signup(props) {
   const handleSignup = data => {
     dispatch(setLoginError(null));
     dispatch(setLoginLoading(true));
-    dispatch(UserSignup(data.username, data.email, data.password, props.history));
+    dispatch(
+      UserSignup(
+        data.username.toLowerCase(),
+        data.email.toLowerCase(),
+        data.password,
+        props.history,
+      ),
+    );
   };
 
   return (
