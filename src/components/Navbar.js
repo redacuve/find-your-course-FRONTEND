@@ -20,7 +20,7 @@ function Navbar() {
       ) : (
         <PublicMenu sidebarRef={sidebarRef} />
       )}
-      <nav className="flex justify-between p-2 items-center">
+      <nav className="flex justify-between p-2 items-center text-2xl">
         <div
           className="md:hidden"
           onClick={toggleMenu}
