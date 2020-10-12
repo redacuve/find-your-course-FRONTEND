@@ -1,13 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../Utils/Common';
 import { setLogout } from '../actions/UserLogin';
+import { getFavourites } from '../actions/GetFavourites';
+import Loading from '../components/Loading';
+import Error from '../components/Error';
+import SingleCourse from '../components/SingleCourse';
 
 function Dashboard(props) {
   const user = getUser();
   const dispatch = useDispatch();
+  const favourites = useSelector(state => state.FavouritesCourses);
+  const { error } = favourites;
+  const { loading } = favourites;
+  useEffect(() => {
+    dispatch(getFavourites());
+  }, [dispatch]);
 
+  if (loading) {
+    return <Loading />;
+  }
+  if (error) {
+    return <Error error={error} />;
+  }
+  if (favourites.favourites) {
+    return (
+      <div>
+        {`Welcome ${user}`}
+        <div>
+          {favourites.favourites.map(favorite => (
+            <SingleCourse
+              course={favorite}
+              key={favorite.id}
+              addToFavourites={null}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
   return (
     <div>
       {`Welcome ${user}`}

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCourses } from '../actions/GetCourses';
 import SingleCourse from '../components/SingleCourse';
@@ -22,7 +21,7 @@ function Courses() {
   if (loading) {
     return <Loading />;
   } if (error) {
-    return <Error errors={error} />;
+    return <Error error={error} />;
   } if (courses) {
     return (
       <div>
