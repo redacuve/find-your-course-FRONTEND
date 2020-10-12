@@ -8,7 +8,7 @@ import Login from '../containers/Login';
 import Signup from '../containers/Signup';
 import Dashboard from '../containers/Dashboard';
 import Courses from '../containers/Courses';
-import FullCourse from './FullCourse';
+import FullCourse from '../containers/FullCourse';
 
 function App() {
   return (
