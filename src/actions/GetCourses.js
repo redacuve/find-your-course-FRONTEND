@@ -24,7 +24,7 @@ const getCourses = () => dispatch => {
       }
     })
     .catch(error => {
-      dispatch(coursesError(error));
+      dispatch(coursesError(error.toString()));
     });
 };
 
