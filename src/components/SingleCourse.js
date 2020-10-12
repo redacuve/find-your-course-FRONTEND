@@ -1,12 +1,13 @@
 import React from 'react';
 import PropType from 'prop-types';
+import { Link } from 'react-router-dom';
 
-function SingleCourse({ course, addToFavourites }) {
+function SingleCourse({ course }) {
   const {
     id, name, description, price, image,
   } = course;
   return (
-    <div className="">
+    <Link to={`/courses/${id}`} className="">
       <h2 className="font-bold">{name}</h2>
       {image && (
         <div>
@@ -20,10 +21,8 @@ function SingleCourse({ course, addToFavourites }) {
         {' '}
         USD
       </p>
-      <button type="button" onClick={() => addToFavourites(id)}>
-        Add to favorites
-      </button>
-    </div>
+      )
+    </Link>
   );
 }
 
@@ -35,7 +34,6 @@ SingleCourse.propTypes = {
     price: PropType.number.isRequired,
     image: PropType.string,
   }).isRequired,
-  addToFavourites: PropType.func.isRequired,
 };
 
 export default SingleCourse;
