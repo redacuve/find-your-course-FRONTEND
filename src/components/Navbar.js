@@ -8,6 +8,7 @@ function Navbar() {
   const history = useHistory();
   const sidebarRef = useRef();
   const token = useSelector(state => state.UserLogin.token);
+  const title = useSelector(state => state.Title.title);
 
   const toggleMenu = () => {
     sidebarRef.current.classList.toggle('open');
@@ -31,7 +32,7 @@ function Navbar() {
         >
           <i className="fas fa-bars" />
         </div>
-        <Link to="/">Title</Link>
+        <div className="text-sm font-bold">{title}</div>
         <div>
           <i className="fal fa-search" />
         </div>
