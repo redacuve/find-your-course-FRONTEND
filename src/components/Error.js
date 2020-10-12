@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Error(props) {
-  const { errors } = props;
+  const { error } = props;
   return (
     <div
       className="bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md"
@@ -22,13 +22,9 @@ function Error(props) {
           <p className="font-bold" data-testid="error-text">
             An error has ocurred, Please try again later.
           </p>
-          <ul className="list-disc" data-testid="error-list">
-            {errors.map(error => (
-              <li className="text-sm" key={error}>
-                {error}
-              </li>
-            ))}
-          </ul>
+          <p className="text-sm">
+            {error}
+          </p>
         </div>
       </div>
     </div>
@@ -36,7 +32,7 @@ function Error(props) {
 }
 
 Error.propTypes = {
-  errors: PropTypes.arrayOf(PropTypes.string).isRequired,
+  error: PropTypes.string.isRequired,
 };
 
 export default Error;
