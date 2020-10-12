@@ -11,31 +11,23 @@ function Courses() {
     dispatch(getCourses());
   }, [dispatch]);
   const courses = useSelector(state => state.GetCourses.courses);
-  const loading = useSelector(state => state.GetCourses.loading);
   const error = useSelector(state => state.GetCourses.error);
 
-  const addFavourites = id => {
-    console.log(`added ${id}`);
-  };
-
-  if (loading) {
-    return <Loading />;
-  } if (error) {
+  if (error) {
     return <Error error={error} />;
-  } if (courses) {
+  } else if (courses) {
     return (
       <div>
         {courses.map(course => (
           <SingleCourse
             course={course}
             key={course.id}
-            addToFavourites={addFavourites}
           />
         ))}
       </div>
     );
   }
-  return <div>Courses</div>;
+  return <Loading />;
 }
 
 export default Courses;
