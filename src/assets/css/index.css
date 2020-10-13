@@ -10,3 +10,7 @@
     transform: translateX(0);
   }
 }
+
+.home {
+  height: calc(100vh - 76px);
+}
