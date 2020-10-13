@@ -17,9 +17,9 @@ function Navbar() {
   return (
     <>
       {token ? (
-        <PrivateMenu sidebarRef={sidebarRef} history={history} />
+        <PrivateMenu sidebarRef={sidebarRef} history={history} clickHandler={toggleMenu} />
       ) : (
-        <PublicMenu sidebarRef={sidebarRef} />
+        <PublicMenu sidebarRef={sidebarRef} clickHandler={toggleMenu} />
       )}
       <nav className="flex justify-between p-2 items-center text-2xl">
         <div
@@ -32,10 +32,7 @@ function Navbar() {
         >
           <i className="fas fa-bars" />
         </div>
-        <div className="text-sm font-bold">{title}</div>
-        <div>
-          <i className="fal fa-search" />
-        </div>
+        <div className="text-sm font-bold px-2">{title}</div>
       </nav>
     </>
   );

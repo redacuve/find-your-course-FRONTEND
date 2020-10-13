@@ -3,11 +3,19 @@ import { NavLink } from 'react-router-dom';
 import PropType from 'prop-types';
 
 function PublicMenu(props) {
-  const { sidebarRef } = props;
+  const { sidebarRef, clickHandler } = props;
   return (
     <div
-      className="offcanvas w-auto bg-gray-200 shadow flex flex-col items-end p-3 w-1/2 h-screen text-lg"
+      className="offcanvas w-auto bg-gray-200 shadow flex flex-col items-start p-3 w-1/2 h-screen text-lg"
       ref={sidebarRef}
+      onClick={clickHandler}
+      role="button"
+      tabIndex={0}
+      onKeyPress={(e => {
+        if (e.key === 'Enter') {
+          clickHandler();
+        }
+      })}
     >
       <NavLink className="mb-6" to="/">
         Home
@@ -23,11 +31,9 @@ function PublicMenu(props) {
 }
 
 PublicMenu.propTypes = {
-  sidebarRef: PropType.shape({ current: PropType.instanceOf(Element) }),
-};
-
-PublicMenu.defaultProps = {
-  sidebarRef: PropType.shape({ current: undefined }),
+  sidebarRef: PropType.shape({ current: PropType.instanceOf(Element) })
+    .isRequired,
+  clickHandler: PropType.func.isRequired,
 };
 
 export default PublicMenu;
