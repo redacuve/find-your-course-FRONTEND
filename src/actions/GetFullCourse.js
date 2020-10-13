@@ -2,6 +2,7 @@ import { fullCourseURL, getToken } from '../Utils/Common';
 
 const GET_FULL_COURSE_SUCCESS = 'GET_FULL_COURSE_SUCCESS';
 const GET_FULL_COURSE_ERROR = 'GET_FULL_COURSE_ERROR';
+const SET_FAVOURITE = 'SET_FAVOURITE';
 
 const courseSuccess = course => ({
   type: GET_FULL_COURSE_SUCCESS,
@@ -11,6 +12,11 @@ const courseSuccess = course => ({
 const courseError = error => ({
   type: GET_FULL_COURSE_ERROR,
   payload: error,
+});
+
+const setFavourite = favourite => ({
+  type: SET_FAVOURITE,
+  payload: favourite,
 });
 
 const getCourse = id => dispatch => {
@@ -28,4 +34,6 @@ const getCourse = id => dispatch => {
     });
 };
 
-export { GET_FULL_COURSE_SUCCESS, GET_FULL_COURSE_ERROR, getCourse };
+export {
+  GET_FULL_COURSE_SUCCESS, GET_FULL_COURSE_ERROR, SET_FAVOURITE, getCourse, setFavourite,
+};
