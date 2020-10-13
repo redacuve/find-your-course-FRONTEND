@@ -26,9 +26,10 @@ export function setUserSession(token, user, username) {
   sessionStorage.setItem('username', username);
 }
 
-const APIDIR = 'https://find-your-course-api.herokuapp.com/';
+const APIDIR = 'https://find-your-course-api.herokuapp.com';
 
 export const LoginURL = (email, password) => `${APIDIR}/auth/login?email=${email}&password=${password}`;
 export const SignupURL = (username, email, password) => `${APIDIR}/signup?username=${username}&email=${email}&password=${password}`;
 export const CoursesURL = `${APIDIR}/courses`;
 export const FavouritesURL = username => `${APIDIR}/${username}/favourites`;
+export const fullCourseURL = id => `${APIDIR}/courses/${id}`;
