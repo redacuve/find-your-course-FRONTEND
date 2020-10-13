@@ -1,6 +1,7 @@
 import React from 'react';
 import PropType from 'prop-types';
 import { Link } from 'react-router-dom';
+import Placeholder from '../assets/img/placeholder.png';
 
 function SingleCourse({ course }) {
   const {
@@ -9,11 +10,9 @@ function SingleCourse({ course }) {
   return (
     <Link to={`/courses/${id}`} className="">
       <h2 className="font-bold">{name}</h2>
-      {image && (
-        <div>
-          <img src={image} alt={name} />
-        </div>
-      )}
+      <div>
+        <img src={image || Placeholder} alt={name} />
+      </div>
       <p className="text-gray-700">{description}</p>
       <p className="text-orange-500">
         $
@@ -21,7 +20,6 @@ function SingleCourse({ course }) {
         {' '}
         USD
       </p>
-      )
     </Link>
   );
 }
