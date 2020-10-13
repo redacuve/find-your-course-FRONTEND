@@ -4,6 +4,7 @@ import FavouritesReducer from './GetFavouritesCoursesReducer';
 import FullCourseReducer from './GetFullCourseReducer';
 import UserLoginReducer from './UserLoginReducer';
 import TitleReducer from './TitleReducer';
+import SingleFavouriteReducer from './Favourite';
 
 const rootReducer = combineReducers({
   UserLogin: UserLoginReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   FavouritesCourses: FavouritesReducer,
   FullCourse: FullCourseReducer,
   Title: TitleReducer,
+  Favorite: SingleFavouriteReducer,
 });
 
 export default rootReducer;
