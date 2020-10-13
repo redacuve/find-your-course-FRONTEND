@@ -45,7 +45,7 @@ const UserLogin = (email, password, history) => dispatch => {
       }
     })
     .catch(error => {
-      dispatch(setLoginError(error));
+      dispatch(setLoginError(error.toString()));
     });
 };
 
