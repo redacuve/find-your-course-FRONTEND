@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setTitle } from '../actions/Title';
 
 function Home() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setTitle('Find Your Courses'))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     <div>
       <h2>Find your Course Anywhere</h2>

@@ -7,6 +7,7 @@ import { getFavourites } from '../actions/GetFavourites';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import SingleCourse from '../components/SingleCourse';
+import { setTitle } from '../actions/Title';
 
 function Dashboard(props) {
   const user = getUser();
@@ -17,6 +18,10 @@ function Dashboard(props) {
   useEffect(() => {
     dispatch(getFavourites());
   }, [dispatch]);
+  useEffect(() => {
+    dispatch(setTitle('Dashboard'))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   if (loading) {
     return <Loading />;

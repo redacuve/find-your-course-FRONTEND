@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,12 +8,18 @@ import {
   setLoginLoading,
   UserSignup,
 } from '../actions/UserLogin';
+import { setTitle } from '../actions/Title';
 
 function Signup(props) {
   const { register, handleSubmit, errors } = useForm();
   const dispatch = useDispatch();
   const error = useSelector(state => state.UserLogin.error);
   const loading = useSelector(state => state.UserLogin.loading);
+
+  useEffect(() => {
+    dispatch(setTitle('Dashboard'))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const handleSignup = data => {
     dispatch(setLoginError(null));

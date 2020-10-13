@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,12 +8,17 @@ import {
   setLoginLoading,
   setLoginError,
 } from '../actions/UserLogin';
+import { setTitle } from '../actions/Title';
 
 function Login(props) {
   const { register, handleSubmit, errors } = useForm();
   const dispatch = useDispatch();
   const error = useSelector(state => state.UserLogin.error);
   const loading = useSelector(state => state.UserLogin.loading);
+  useEffect(() => {
+    dispatch(setTitle('Log In'))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const handleLogin = data => {
     dispatch(setLoginError(null));
