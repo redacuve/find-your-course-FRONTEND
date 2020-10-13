@@ -13,8 +13,7 @@ function Courses() {
   }, [dispatch]);
   useEffect(() => {
     dispatch(setTitle('All Courses'));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
   const courses = useSelector(state => state.GetCourses.courses);
   const error = useSelector(state => state.GetCourses.error);
 

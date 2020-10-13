@@ -6,9 +6,8 @@ import { setTitle } from '../actions/Title';
 function Home() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setTitle('Find Your Courses'))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    dispatch(setTitle('Find Your Courses'));
+  }, []);
   return (
     <div>
       <h2>Find your Course Anywhere</h2>

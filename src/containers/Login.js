@@ -16,9 +16,8 @@ function Login(props) {
   const error = useSelector(state => state.UserLogin.error);
   const loading = useSelector(state => state.UserLogin.loading);
   useEffect(() => {
-    dispatch(setTitle('Log In'))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    dispatch(setTitle('Log In'));
+  }, []);
 
   const handleLogin = data => {
     dispatch(setLoginError(null));

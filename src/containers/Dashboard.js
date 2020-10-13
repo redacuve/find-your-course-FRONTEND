@@ -19,9 +19,8 @@ function Dashboard(props) {
     dispatch(getFavourites());
   }, [dispatch]);
   useEffect(() => {
-    dispatch(setTitle('Dashboard'))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    dispatch(setTitle('Dashboard'));
+  }, []);
 
   if (loading) {
     return <Loading />;
@@ -32,7 +31,8 @@ function Dashboard(props) {
   if (favourites.favourites) {
     return (
       <div>
-        {`Welcome ${user}`}
+        <h2>{`Welcome ${user}`}</h2>
+        <p>These are your favorite courses</p>
         <div>
           {favourites.favourites.map(favorite => (
             <SingleCourse

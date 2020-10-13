@@ -17,9 +17,8 @@ function Signup(props) {
   const loading = useSelector(state => state.UserLogin.loading);
 
   useEffect(() => {
-    dispatch(setTitle('Dashboard'))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    dispatch(setTitle('Sign Up'));
+  }, []);
 
   const handleSignup = data => {
     dispatch(setLoginError(null));
