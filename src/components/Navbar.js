@@ -21,7 +21,7 @@ function Navbar() {
       ) : (
         <PublicMenu sidebarRef={sidebarRef} clickHandler={toggleMenu} />
       )}
-      <nav className="flex justify-between p-2 items-center text-2xl">
+      <nav className="flex justify-between p-2 items-center text-2xl bg-white">
         <div
           className="md:hidden"
           onClick={toggleMenu}

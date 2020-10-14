@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <div className="container mx-auto max-w-screen-xl p-3">
+      <div className="container mx-auto max-w-screen-xl">
         <Switch>
           <Route exact path="/" component={Home} />
           <PublicRoute path="/login" component={Login} />

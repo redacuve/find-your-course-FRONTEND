@@ -26,10 +26,10 @@ function Login(props) {
   };
 
   return (
-    <>
+    <div className="login flex items-center justify-center">
       {error && <Warning error={error} />}
       <form
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className="bg-transparent rounded"
         onSubmit={handleSubmit(handleLogin)}
       >
         <div className="mb-4">
@@ -40,7 +40,7 @@ function Login(props) {
             Email
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-orange-400"
             id="email"
             type="email"
             placeholder="E-mail"
@@ -61,7 +61,7 @@ function Login(props) {
             Password
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:border-orange-400"
             id="password"
             type="password"
             name="password"
@@ -76,7 +76,7 @@ function Login(props) {
         </div>
         <div className="flex justify-end">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:border-orange-400"
             type="submit"
             disabled={loading}
           >
@@ -85,7 +85,7 @@ function Login(props) {
         </div>
         <br />
       </form>
-    </>
+    </div>
   );
 }
 

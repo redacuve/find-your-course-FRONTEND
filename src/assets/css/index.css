@@ -1,7 +1,7 @@
 @media (max-width: 767.98px) {
   .offcanvas {
     position: fixed;
-    top: 40px;
+    top: 52px;
     transition: transform 0.3s ease-in-out;
     transform: translateX(-100%);
   }
@@ -13,4 +13,11 @@
 
 .home {
   height: calc(100vh - 76px);
+}
+
+.login, .signup {
+  height: calc(100vh - 52px - 56px);
+  min-height: -webkit-fill-available;
+  background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url('../img/login_signup.jpg');
+  background-size: cover;
 }
