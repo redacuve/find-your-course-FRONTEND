@@ -9,6 +9,7 @@ const initialState = {
   error: null,
   loading: false,
   favourite: null,
+  tags: [],
 };
 
 function FullCourseReducer(state = initialState, action) {
@@ -19,6 +20,7 @@ function FullCourseReducer(state = initialState, action) {
         error: null,
         loading: false,
         favourite: action.payload.favourite,
+        tags: action.payload.tags,
       };
     case GET_FULL_COURSE_ERROR:
       return {
@@ -26,6 +28,7 @@ function FullCourseReducer(state = initialState, action) {
         error: action.payload,
         loading: false,
         favourite: null,
+        tags: [],
       };
     case SET_FAVOURITE:
       return {
