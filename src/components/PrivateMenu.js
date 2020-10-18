@@ -11,7 +11,7 @@ function PrivateMenu(props) {
   const email = useSelector(state => state.UserLogin.user);
   return (
     <div
-      className="offcanvas w-auto bg-gray-200 shadow flex flex-col items-start p-3 w-1/2 h-screen text-lg"
+      className="offcanvas w-auto bg-gray-200 shadow flex flex-col items-start p-3 w-1/2 h-screen text-lg z-10"
       ref={sidebarRef}
       onClick={clickHandler}
       role="button"
