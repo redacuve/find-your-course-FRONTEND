@@ -31,8 +31,8 @@ function Dashboard(props) {
   if (favourites.favourites) {
     return (
       <div>
-        <h2>{`Welcome ${user}`}</h2>
-        <p>These are your favorite courses</p>
+        <h2 className="text-gray-800 font-bold text-sm">{`Welcome ${user}`}</h2>
+        <p className="text-lg text-orange-600 mb-4">These are your favorite courses</p>
         <div>
           {favourites.favourites.map(favorite => (
             <SingleCourse
