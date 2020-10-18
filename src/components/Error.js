@@ -5,7 +5,7 @@ function Error(props) {
   const { error } = props;
   return (
     <div
-      className="bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md"
+      className="bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md absolute top-0"
       role="alert"
     >
       <div className="flex">

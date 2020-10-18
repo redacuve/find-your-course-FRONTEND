@@ -5,7 +5,7 @@ function Warning(props) {
   const { error } = props;
   return (
     <div
-      className="bg-yellow-100 border-t-4 border-yellow-500 rounded-b text-yellow-900 px-4 py-3 shadow-md"
+      className="bg-yellow-100 border-t-4 border-yellow-500 rounded-b text-yellow-900 px-4 py-3 shadow-md absolute top-0"
       role="alert"
     >
       <div className="flex">
