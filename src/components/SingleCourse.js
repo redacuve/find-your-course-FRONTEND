@@ -1,7 +1,7 @@
 import React from 'react';
 import PropType from 'prop-types';
 import { Link } from 'react-router-dom';
-import Placeholder from '../assets/img/placeholder.png';
+import Placeholder from '../assets/img/placeholder.jpg';
 
 function SingleCourse({ course }) {
   const {
