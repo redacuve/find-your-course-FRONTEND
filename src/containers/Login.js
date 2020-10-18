@@ -17,6 +17,7 @@ function Login(props) {
   const loading = useSelector(state => state.UserLogin.loading);
   useEffect(() => {
     dispatch(setTitle('Log In'));
+    dispatch(setLoginError(null));
   }, []);
 
   const handleLogin = data => {
@@ -26,7 +27,7 @@ function Login(props) {
   };
 
   return (
-    <div className="login flex items-center justify-center">
+    <div className="login flex items-center justify-center relative">
       {error && <Warning error={error} />}
       <form
         className="bg-transparent rounded"

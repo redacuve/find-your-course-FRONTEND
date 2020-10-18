@@ -18,6 +18,7 @@ function Signup(props) {
 
   useEffect(() => {
     dispatch(setTitle('Sign Up'));
+    dispatch(setLoginError(null));
   }, []);
 
   const handleSignup = data => {
@@ -34,7 +35,7 @@ function Signup(props) {
   };
 
   return (
-    <div className="signup flex items-center justify-center">
+    <div className="signup flex items-center justify-center relative">
       {error && <Warning error={error} />}
       <form
         className="bg-transparent rounded"
