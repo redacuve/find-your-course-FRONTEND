@@ -5,21 +5,22 @@ import Placeholder from '../assets/img/placeholder.png';
 
 function SingleCourse({ course }) {
   const {
-    id, name, description, price, image,
+    id, name, price, image,
   } = course;
   return (
-    <Link to={`/courses/${id}`} className="">
-      <h2 className="font-bold">{name}</h2>
-      <div>
-        <img src={image || Placeholder} alt={name} />
+    <Link to={`/courses/${id}`}>
+      <div className="w-full">
+        <img className="w-full" src={image || Placeholder} alt={name} />
       </div>
-      <p className="text-gray-700">{description}</p>
-      <p className="text-orange-500">
-        $
-        {price}
-        {' '}
-        USD
-      </p>
+      <div className="flex flex-wrap items-center mt-2">
+        <h2 className="font-bold w-3/4">{name}</h2>
+        <p className="text-orange-500 w-1/4 text-center text-sm">
+          $
+          {price}
+          {' '}
+          USD
+        </p>
+      </div>
     </Link>
   );
 }
