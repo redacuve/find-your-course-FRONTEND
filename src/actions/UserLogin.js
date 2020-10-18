@@ -56,7 +56,7 @@ const UserSignup = (username, email, password, history) => dispatch => {
     .then(response => response.json())
     .then(result => {
       if (result.auth_token) {
-        setUserSession(result.auth_token, email);
+        setUserSession(result.auth_token, email, result.username);
         dispatch(setLogin(result.auth_token, email, result.username));
         history.push('/dashboard');
       } else {
@@ -64,7 +64,7 @@ const UserSignup = (username, email, password, history) => dispatch => {
       }
     })
     .catch(error => {
-      dispatch(setLoginError(error));
+      dispatch(setLoginError(error.toString()));
     });
 };
 
